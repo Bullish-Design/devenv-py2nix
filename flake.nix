@@ -9,6 +9,6 @@
   outputs = { self, nixpkgs }:
     {
       devenvModules.default = ./module.nix;
-      devenvModules.python-uv2nix = ./module.nix;
+      devenvModules.devenv-py2nix = ./module.nix;
     };
 }
