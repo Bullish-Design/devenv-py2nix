@@ -1,2 +1,2 @@
 # devenv.nix
-./module.nix
+import ./module.nix
