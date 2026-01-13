@@ -86,7 +86,7 @@ in
         # Construct package set using pyproject-nix and apply overlays
         # Uses the transformed cfg.package from devenv's main python module
         pythonSet = (pkgs.callPackage pyproject-nix.build.packages {
-          python = cfg.package;
+          python = cfg.package.python or cfg.package;
         }).overrideScope (lib.composeManyExtensions [
           pyproject-build-systems.overlays.default
           overlay
