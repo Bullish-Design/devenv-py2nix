@@ -32,7 +32,7 @@ let
 
 in
 {
-  options.languages.python = lib.mkIf (cfg.enable or false) {
+  options.languages.python = {
     import = lib.mkOption {
       type = lib.types.functionTo (lib.types.functionTo lib.types.package);
       description = ''
