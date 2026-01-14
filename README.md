@@ -1,5 +1,5 @@
-# devenv-python-uv2nix/README.md
-# devenv Python uv2nix Module
+# devenv-py2nix/README.md
+# devenv py2nix Module
 
 External devenv module that adds `languages.python.import` functionality using uv2nix.
 
@@ -21,11 +21,11 @@ Add to your `devenv.yaml`:
 
 ```yaml
 inputs:
-  python-uv2nix:
-    url: github:yourusername/devenv-python-uv2nix
+  devenv-py2nix:
+    url: github:Bullish-Design/devenv-py2nix
 
 imports:
-  - python-uv2nix
+  - devenv-py2nix
 ```
 
 Or in your flake-based devenv:
@@ -34,14 +34,14 @@ Or in your flake-based devenv:
 {
   inputs = {
     devenv.url = "github:cachix/devenv";
-    python-uv2nix.url = "github:yourusername/devenv-python-uv2nix";
+    devenv-py2nix.url = "github:Bullish-Design/devenv-py2nix";
   };
 
   outputs = { self, nixpkgs, devenv, python-uv2nix, ... }:
     devenv.lib.mkShell {
       inherit inputs pkgs;
       modules = [
-        python-uv2nix.devenvModules.default
+        devenv-py2nix.devenvModules.default
         ({ config, ... }: {
           # your config here
         })

@@ -1,5 +1,5 @@
 # TESTING.md
-# Testing devenv-python-uv2nix
+# Testing devenv-py2nix
 
 ## Quick Test Setup
 
@@ -15,11 +15,11 @@ mkdir test-devenv && cd test-devenv
 inputs:
   nixpkgs:
     url: github:NixOS/nixpkgs/nixos-unstable
-  python-uv2nix:
-    url: path:../devenv-python-uv2nix  # or your github URL
+  devenv-py2nix:
+    url: path:../devenv-py2nix  # or your github URL
 
 imports:
-  - python-uv2nix
+  - devenv-py2nix
 ```
 
 3. Create `devenv.nix`:
@@ -28,7 +28,7 @@ imports:
 { config, ... }:
 
 let
-  testPkg = config.languages.python.import ../devenv-python-uv2nix/examples/test-project {};
+  testPkg = config.languages.python.import ../devenv-py2nix/examples/test-project {};
 in
 {
   languages.python = {
